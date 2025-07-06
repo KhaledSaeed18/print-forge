@@ -1,3 +1,5 @@
+import HeroImage from "@/public/hero-image.png"
+
 export default function Home() {
   return (
     <main>
@@ -23,7 +25,9 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <img src="/hero-image.png" width={350} />
+
+        <img src={HeroImage.src} className="w-[350px] h-auto rounded-lg" />
+
       </section>
     </main>
   )
