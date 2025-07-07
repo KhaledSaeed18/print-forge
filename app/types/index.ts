@@ -2,13 +2,13 @@ import type { ReactNode } from "react"
 
 // Data Types
 export type Model = {
-  id: number
-  name: string
-  description: string
-  likes: number
-  image: string
-  category: string
-  dateAdded: string
+    id: number
+    name: string
+    description: string
+    likes: number
+    image: string
+    category: string
+    dateAdded: string
 }
 
 export type Category = {
@@ -22,7 +22,7 @@ export type CategoriesData = {
 
 // Page Types
 export type RootLayoutProps = Readonly<{
-  children: React.ReactNode;
+    children: React.ReactNode;
 }>
 
 export type ModelDetailPageProps = {
