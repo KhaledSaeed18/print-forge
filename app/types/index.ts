@@ -20,6 +20,10 @@ export type CategoriesData = {
     categories: Category[]
 }
 
+export type GetModelsParams = {
+    category?: string
+}
+
 // Page Types
 export type CategoryPageProps = {
     params: Promise<{
