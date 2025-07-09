@@ -2,12 +2,15 @@
 
 import NavLink from "@/app/components/NavLink"
 import { usePathname } from "next/navigation"
-import { getAllCategories } from "@/app/lib/categories"
 import type { Category } from "@/app/types"
 
-export default function CategoriesNav() {
+interface CategoriesNavProps {
+    categories: Category[]
+}
+
+export default function CategoriesNav({ categories }: CategoriesNavProps) {
     const pathname = usePathname()
-    const categories: Category[] = getAllCategories()
+
     return (
         <aside className="sticky top-0 z-10 w-full bg-white border-b border-gray-200 md:fixed md:w-64 md:top-1/2 md:-translate-y-1/2 md:border-none" >
             <div className="relative">

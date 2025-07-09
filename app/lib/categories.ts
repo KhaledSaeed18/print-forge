@@ -1,19 +1,28 @@
-import categories from "../data/categories.json"
+import { prisma } from "./db"
 import { Category } from "../types"
 
-export function getAllCategories(): Category[] {
+export async function getAllCategories(): Promise<Category[]> {
+    const categories = await prisma.category.findMany({
+        orderBy: {
+            displayName: 'asc'
+        }
+    })
     return categories
 }
 
-export function getCategoryBySlug(slug: string): Category {
-    const category = categories.find(c => c.slug === slug)
+export async function getCategoryBySlug(slug: string): Promise<Category> {
+    const category = await prisma.category.findUnique({
+        where: {
+            slug: slug
+        }
+    })
     if (!category) {
         throw new Error(`Category with slug ${slug} not found`)
     }
     return category
 }
 
-export function getDisplayNameFromSlug(slug: string): string {
-    const category = getCategoryBySlug(slug)
+export async function getDisplayNameFromSlug(slug: string): Promise<string> {
+    const category = await getCategoryBySlug(slug)
     return category.displayName
 }
