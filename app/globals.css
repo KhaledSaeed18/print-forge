@@ -1,9 +1,5 @@
 @import "tailwindcss";
 
-:root {
-    --color-orange-accent: #f97316;
-}
-
 h1,
 h2,
 h3,
