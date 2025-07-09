@@ -14,7 +14,7 @@ export default function ModelCard({ model }: ModelCardProps) {
             <div className="overflow-hidden transition-shadow bg-white rounded-lg shadow-md hover:shadow-lg" role="article">
                 <div className="relative aspect-square">
                     <img
-                        src={placeholderImg.src}
+                        src={model.image || placeholderImg.src}
                         alt={model.name}
                         className="absolute inset-0 object-cover w-full h-full"
                     />
